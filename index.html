@@ -11,9 +11,9 @@
 <body class="joke">
         <div class="container">
             <div class="row">
-                <div class="col-12 p-4">
-                    <button id="startButton" type="button" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">Ver chistes  &#128514</button>
-                </div>
+               <div class="col-12 pt-3">
+                  <button id="startButton" type="button" class="btn btn-outline-primary mx-auto d-grid" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver chistes  &#128514</button>
+               </div>
             </div>
         </div>
 
@@ -22,11 +22,16 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> &#128514  &#128514  &#128514 CHISTE  &#128514  &#128514  &#128514</h5>
+          <h5 class="modal-title d-flex " id="exampleModalLabel"> &#128514  &#128514  &#128514 CHISTE  &#128514  &#128514  &#128514</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <p id="joke"></p>
+          <p id="joke" class="text-center"></p>
+          <div class="btn-group d-flex gap-2"  role="group" aria-label="Basic example">
+            <button onclick="toScore(3)" type="button" class="btn btn-primary"><span style="font-size:30px">&#128514</span></button>
+            <button onclick="toScore(2)" type="button" class="btn btn-primary"><span style="font-size:30px">&#128528</span></button>
+            <button onclick="toScore(1)" type="button" class="btn btn-primary"><span style="font-size:30px">&#128577</span></button>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
