@@ -3,8 +3,10 @@ const nextJokeButton=document.getElementById("nextJokeButton") as HTMLButtonElem
 const joke=document.getElementById("acudits") as HTMLButtonElement
 interface jokes {joke:string; score:number;date:string}
 let objectJoke:jokes
-let reportAcudits:jokes[]=[]
 
+
+
+ //excercici 1-2
 startButton.addEventListener(`click`,()=>{
     fetch("https://icanhazdadjoke.com/",{
         method:"GET",
@@ -49,6 +51,8 @@ nextJokeButton.addEventListener(`click`,()=>{
 
 })
 
+// exercici 3
+let reportAcudits:jokes[]=[]
 
 function toScore(score:number):void{
 
@@ -61,8 +65,12 @@ function toScore(score:number):void{
         console.log(reportAcudits)
 
 }        
-    
 
-
-
-
+// exercici 4
+fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&lang=sp&appid=8e42f1a13fa0e057ce270526d580687f")
+    .then(answer=>answer.json())
+    .then(answerJson=>{
+        const weather = document.getElementById("weather") as HTMLParagraphElement
+        weather.innerHTML = `BARCELONA: <br> ${answerJson.weather[0].description}<br> Temp: ${answerJson.main.temp} ºC`
+    })
+   
