@@ -3,6 +3,7 @@ const nextJokeButton=document.getElementById("nextJokeButton") as HTMLButtonElem
 const joke=document.getElementById("acudits") as HTMLButtonElement
 interface jokes {joke:string; score:number;date:string}
 let objectJoke:jokes
+let chuckNorris:boolean=true
 
 
 
@@ -30,6 +31,7 @@ startButton.addEventListener(`click`,()=>{
 })
 
 nextJokeButton.addEventListener(`click`,()=>{
+    if(chuckNorris===false){
     fetch("https://icanhazdadjoke.com/",{
         method:"GET",
         headers:{
@@ -47,7 +49,10 @@ nextJokeButton.addEventListener(`click`,()=>{
         }
         const joke=document.getElementById("joke") as HTMLParagraphElement
         joke.textContent=`${acudit.joke}` 
+        chuckNorris=true
     })
+    }
+    else showChuckNorris()
 
 })
 
@@ -73,4 +78,16 @@ fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&l
         const weather = document.getElementById("weather") as HTMLParagraphElement
         weather.innerHTML = `BARCELONA: <br> ${answerJson.weather[0].description}<br> Temp: ${answerJson.main.temp} ºC`
     })
-   
+
+    // exercici 5
+
+    function showChuckNorris(){
+    fetch("https://api.chucknorris.io/jokes/random")
+    .then(answer=>answer.json())
+    .then(answerJson=>{
+        console.log(answerJson.value)
+        chuckNorris=false
+       
+    })
+
+}

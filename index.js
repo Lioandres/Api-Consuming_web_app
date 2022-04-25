@@ -3,6 +3,7 @@ const startButton = document.getElementById("startButton");
 const nextJokeButton = document.getElementById("nextJokeButton");
 const joke = document.getElementById("acudits");
 let objectJoke;
+let chuckNorris = true;
 //excercici 1-2
 startButton.addEventListener(`click`, () => {
     fetch("https://icanhazdadjoke.com/", {
@@ -25,24 +26,29 @@ startButton.addEventListener(`click`, () => {
     });
 });
 nextJokeButton.addEventListener(`click`, () => {
-    fetch("https://icanhazdadjoke.com/", {
-        method: "GET",
-        headers: {
-            'Accept': 'application/json',
-            'User-Agent': 'My Library (https://github.com/username/repo)'
-        }
-    })
-        .then(answer => answer.json())
-        .then(acudit => {
-        console.log(acudit.joke);
-        objectJoke = {
-            joke: acudit.id,
-            score: 1,
-            date: ""
-        };
-        const joke = document.getElementById("joke");
-        joke.textContent = `${acudit.joke}`;
-    });
+    if (chuckNorris === false) {
+        fetch("https://icanhazdadjoke.com/", {
+            method: "GET",
+            headers: {
+                'Accept': 'application/json',
+                'User-Agent': 'My Library (https://github.com/username/repo)'
+            }
+        })
+            .then(answer => answer.json())
+            .then(acudit => {
+            console.log(acudit.joke);
+            objectJoke = {
+                joke: acudit.id,
+                score: 1,
+                date: ""
+            };
+            const joke = document.getElementById("joke");
+            joke.textContent = `${acudit.joke}`;
+            chuckNorris = true;
+        });
+    }
+    else
+        showChuckNorris();
 });
 // exercici 3
 let reportAcudits = [];
@@ -66,3 +72,12 @@ fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&l
     const weather = document.getElementById("weather");
     weather.innerHTML = `BARCELONA: <br> ${answerJson.weather[0].description}<br> Temp: ${answerJson.main.temp} ºC`;
 });
+// exercici 5
+function showChuckNorris() {
+    fetch("https://api.chucknorris.io/jokes/random")
+        .then(answer => answer.json())
+        .then(answerJson => {
+        console.log(answerJson.value);
+        chuckNorris = false;
+    });
+}
