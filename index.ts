@@ -50,8 +50,16 @@ nextJokeButton.addEventListener(`click`,()=>{
         joke.textContent=`${acudit.joke}` 
         chuckNorris=true
     })
+    column1.classList.remove("blob4")
+    column1.classList.add("blob1")
+    column2.classList.remove("blob5")
+    column2.classList.add("blob2")
+    column3.classList.remove("blob6")
+    column3.classList.add("blob3")
     }
     else showChuckNorris()
+   
+    
 
 })
 
@@ -75,10 +83,10 @@ fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&l
     .then(answer=>answer.json())
     .then(answerJson=>{
         const weather = document.getElementById("weather") as HTMLParagraphElement
-        weather.innerHTML = `BARCELONA: <br> ${answerJson.weather[0].description}<br> Temp: ${answerJson.main.temp} ºC`
+        weather.innerHTML = `<img src="https://openweathermap.org/img/wn/${answerJson.weather[0].icon}@2x.png" alt=""> | ${answerJson.main.temp} ºC `
     })
 
-    // exercici 5
+// exercici 5
 
     function showChuckNorris(){
     fetch("https://api.chucknorris.io/jokes/random")
@@ -93,7 +101,19 @@ fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&l
         const joke=document.getElementById("joke") as HTMLParagraphElement
         joke.textContent=`${answerJson.value}` 
         chuckNorris=false
+        column1.classList.remove("blob1")
+        column1.classList.add("blob4")
+        column2.classList.remove("blob2")
+        column2.classList.add("blob5")
+        column3.classList.remove("blob3")
+        column3.classList.add("blob6")
        
     })
 
 }
+
+// exercici 6
+const column1=document.getElementById("column1") as HTMLDivElement
+const column2=document.getElementById("column2") as HTMLDivElement
+const column3=document.getElementById("column3") as HTMLDivElement
+

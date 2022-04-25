@@ -1,24 +1,43 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-.centerContent{
-    width:60%;
-}
+
 .blob1{
-    background: url("../img/blob_left.svg") no-repeat left bottom
-    
-    
+    background: url("../img/blob_1.svg") no-repeat left bottom  
 }
-
 .blob2{
-    height: 700px;
-    background: url("../img/blob_center.svg") center no-repeat
-        
-     
+    height: 650px;
+    background: url("../img/blob_2.svg") center no-repeat
  }
-
 .blob3{
-    background: url("../img/blob_right.svg") no-repeat right top 
-    
-    
+    background: url("../img/blob_3.svg") no-repeat right top 
 }
+
+.blob4{
+    background: url("../img/blob\ _4.svg") no-repeat left bottom  
+}
+.blob5{
+    height: 650px;
+    background: url("../img/blob_5.svg") center no-repeat
+ }
+.blob6{
+    background: url("../img/blob_6.svg") no-repeat right top 
+}
+
+
+
+    @media only screen and (max-width: 560px) {
+        .blob1{
+            height: 100px;
+            background: url("../img/blob_1.svg") no-repeat center 
+        }
+        .blob2{
+            width:500px;
+            height: 300px;
+            
+         }
+        .blob3{
+            height: 100px;  
+            background: url("../img/blob_3.svg") no-repeat center 
+        }
+    }
 
