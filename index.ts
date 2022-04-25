@@ -8,7 +8,6 @@ let chuckNorris:boolean=true
 
 
  //excercici 1-2
-startButton.addEventListener(`click`,()=>{
     fetch("https://icanhazdadjoke.com/",{
         method:"GET",
         headers:{
@@ -28,7 +27,7 @@ startButton.addEventListener(`click`,()=>{
         joke.textContent=`${acudit.joke}` 
     })
 
-})
+
 
 nextJokeButton.addEventListener(`click`,()=>{
     if(chuckNorris===false){
@@ -86,6 +85,13 @@ fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&l
     .then(answer=>answer.json())
     .then(answerJson=>{
         console.log(answerJson.value)
+        objectJoke={
+            joke:answerJson.id,
+            score:1,
+            date:""
+        }
+        const joke=document.getElementById("joke") as HTMLParagraphElement
+        joke.textContent=`${answerJson.value}` 
         chuckNorris=false
        
     })

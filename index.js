@@ -5,25 +5,23 @@ const joke = document.getElementById("acudits");
 let objectJoke;
 let chuckNorris = true;
 //excercici 1-2
-startButton.addEventListener(`click`, () => {
-    fetch("https://icanhazdadjoke.com/", {
-        method: "GET",
-        headers: {
-            'Accept': 'application/json',
-            'User-Agent': 'My Library (https://github.com/username/repo)'
-        }
-    })
-        .then(answer => answer.json())
-        .then(acudit => {
-        console.log(acudit.joke);
-        objectJoke = {
-            joke: acudit.id,
-            score: 1,
-            date: ""
-        };
-        const joke = document.getElementById("joke");
-        joke.textContent = `${acudit.joke}`;
-    });
+fetch("https://icanhazdadjoke.com/", {
+    method: "GET",
+    headers: {
+        'Accept': 'application/json',
+        'User-Agent': 'My Library (https://github.com/username/repo)'
+    }
+})
+    .then(answer => answer.json())
+    .then(acudit => {
+    console.log(acudit.joke);
+    objectJoke = {
+        joke: acudit.id,
+        score: 1,
+        date: ""
+    };
+    const joke = document.getElementById("joke");
+    joke.textContent = `${acudit.joke}`;
 });
 nextJokeButton.addEventListener(`click`, () => {
     if (chuckNorris === false) {
@@ -78,6 +76,13 @@ function showChuckNorris() {
         .then(answer => answer.json())
         .then(answerJson => {
         console.log(answerJson.value);
+        objectJoke = {
+            joke: answerJson.id,
+            score: 1,
+            date: ""
+        };
+        const joke = document.getElementById("joke");
+        joke.textContent = `${answerJson.value}`;
         chuckNorris = false;
     });
 }

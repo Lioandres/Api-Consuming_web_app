@@ -1,9 +1,24 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-.joke{
-    background-image: url("../img/jokes.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.centerContent{
+    width:60%;
+}
+.blob1{
+    background: url("../img/blob_left.svg") no-repeat left bottom
+    
     
 }
+
+.blob2{
+    height: 700px;
+    background: url("../img/blob_center.svg") center no-repeat
+        
+     
+ }
+
+.blob3{
+    background: url("../img/blob_right.svg") no-repeat right top 
+    
+    
+}
+

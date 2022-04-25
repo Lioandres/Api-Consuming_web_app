@@ -10,48 +10,46 @@
   <title>Document</title>
 </head>
 
-<body class="joke">
+<body>
 
-  <div class="badge bg-primary text-wrap text-center m-2" style="width: 10rem;">
+  <div class="badge bg-warning text-wrap text-center m-2" style="width: 10rem;">
     <p id="weather"></p>
   </div>
 
   <div class="container">
     <div class="row">
-      <div class="col-12 pt-3">
-        <button id="startButton" type="button" class="btn btn-outline-primary mx-auto d-grid" data-bs-toggle="modal"
-          data-bs-target="#exampleModal">Ver chistes &#128514</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title d-flex " id="exampleModalLabel"> &#128514 &#128514 &#128514 CHISTE &#128514 &#128514
-            &#128514</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p id="joke" class="text-center"></p>
-          <div class="btn-group d-flex gap-2" role="group" aria-label="Basic example">
-            <button onclick="toScore(3)" type="button" class="btn btn-primary"><span
-                style="font-size:30px">&#128514</span></button>
-            <button onclick="toScore(2)" type="button" class="btn btn-primary"><span
-                style="font-size:30px">&#128528</span></button>
-            <button onclick="toScore(1)" type="button" class="btn btn-primary"><span
-                style="font-size:30px">&#128577</span></button>
+      <div class="col-1 blob1">
+      </div>
+
+      <div class="container blob2">
+        <div class="row">
+
+          <div class="col-3">7</div>
+          <div class="col-6">
+            <p class="text-center pt-5">PREPARADO PARA REIR?</p>
+            <p id="joke" class="text-center pt-5"></p>
+            <div class="btn-group d-flex gap-5 p-5" role="group" aria-label="Basic example">
+              <button onclick="toScore(3)" type="button" class="btn btn-warning"><span
+                  style="font-size:30px">&#128514</span></button>
+              <button onclick="toScore(2)" type="button" class="btn btn-warning"><span
+                  style="font-size:30px">&#128528</span></button>
+              <button onclick="toScore(1)" type="button" class="btn btn-warning"><span
+                  style="font-size:30px">&#128577</span></button>
+            </div>
+            <button id="nextJokeButton" type="button" class="btn btn-outline-warning text-dark d-flex mx-auto">Siguiente
+              Chiste &#128514</button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button id="nextJokeButton" type="button" class="btn btn-primary">Siguiente chiste</button>
+          <div class="col-3">7</div>
         </div>
       </div>
+
+      <div class="col-1 blob3">
+      </div>
+
     </div>
-  </div>
+
+
 
 
 
