@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./scss/main.css">
+  <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div>
+    <p id="weather"></p>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div id="column1" class="col-12 col-md-1 blob1">
+      </div>
+
+      <div class="col-12 col-md-9">
+        <div id="column2" class="container blob2">
+          <div class="row">
+
+            <div class="col-3"></div>
+            <div class="col-6 mt-md-5 pt-md-4 text-white">
+              <p class="text-center pt-md-5" style="font-size: 1.5rem;">PREPARADO PARA REIR?</p>
+              <p id="joke" class="text-center pt-md-5"></p>
+              <div class="btn-group d-flex gap-1 p-md-5" role="group" aria-label="Basic example">
+                <button onclick="toScore(3)" type="button" class="btn btn-warning"><span
+                    style="font-size:30px">&#128514</span></button>
+                <button onclick="toScore(2)" type="button" class="btn btn-warning"><span
+                    style="font-size:30px">&#128528</span></button>
+                <button onclick="toScore(1)" type="button" class="btn btn-warning"><span
+                    style="font-size:30px">&#128577</span></button>
+              </div>
+              <button id="nextJokeButton" type="button"
+                class="btn btn-outline-warning text-dark d-flex mx-auto mt-2">Siguiente
+                Chiste &#128514</button>
+            </div>
+            <div class="col-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="column3" class="col-12 col-md-1 blob3 mt-5 pt-5">
+      </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+<script src="./index.js"></script>
+
+</html>
